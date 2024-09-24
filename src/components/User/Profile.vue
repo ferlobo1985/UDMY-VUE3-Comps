@@ -16,6 +16,7 @@
         <hr/>
         <button @click="emit('update-lastname','Michaelson')">Change from child</button>
         <button @click="sayHello">Say hello</button>
+        <button @click="updateAge(40)">Update age</button>
     </div>
 </template>
 
@@ -25,7 +26,8 @@
         alsoKnownAs:String,
         userLastname:String,
         userAge:Number,
-        userParents:Object
+        userParents:Object,
+        updateAge:Function
     });
 
     const sayHello = () => {
