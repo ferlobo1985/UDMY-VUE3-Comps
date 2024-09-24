@@ -2,44 +2,20 @@
     <div>
         <app-header/>
         <div class="container">
-            <UserProfile
-               
-                :userLastname="data.lastname"
-                :userAge="data.age"
-                :userParents="data.parents"
-                @update-lastname="data.lastname = $event"
-                @say-hello="alertHello"
-                :updateAge="updateAge"
-            />
-            <button @click="updateName">Update name</button>
+            <Cars :cars="cars"/>
         </div>
     </div>
 </template>
 
 <script setup>
-    import UserProfile from './components/User/Profile.vue';
     import { reactive } from 'vue';
-    const data = reactive({
-        name:'Rocket',
-        lastname:'Joness',
-        age:'28',
-        parents:{
-            father:'Mario',
-            mother:'Martha'
-        }
-    })
+    import Cars from './components/Cars/index.vue';
 
-    const updateName = () => {
-        data.name = "Golden child"
-    }
-
-    const alertHello = () => {
-        alert('Hello !!')
-    }
-
-    const updateAge = (value) => {
-        data.age = value;
-    }
+    const cars = reactive([
+        {model:'F9',brand:'Ferrari'},
+        {model:'911',brand:'Porsche'},
+        {model:'Tipo',brand:'Fiat'}
+    ])
 
 </script>
 
