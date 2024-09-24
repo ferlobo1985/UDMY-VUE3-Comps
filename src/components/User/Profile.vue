@@ -23,9 +23,22 @@
 <script setup>
     const emit = defineEmits(['update-lastname','say-hello']);
     const props = defineProps({
-        alsoKnownAs:String,
-        userLastname:String,
-        userAge:Number,
+        alsoKnownAs:{
+            type:String,
+            required:true,
+            default:'N/A'
+        },
+        userLastname:{
+            type:String,
+            validator(value){
+                if(value === 'Jones'){
+                    return true
+                } else {
+                    return false
+                }
+            }
+        },
+        userAge:[Number,String],
         userParents:Object,
         updateAge:Function
     });

@@ -3,7 +3,7 @@
         <app-header/>
         <div class="container">
             <UserProfile
-                :alsoKnownAs="data.name"
+               
                 :userLastname="data.lastname"
                 :userAge="data.age"
                 :userParents="data.parents"
@@ -21,8 +21,8 @@
     import { reactive } from 'vue';
     const data = reactive({
         name:'Rocket',
-        lastname:'Jones',
-        age:28,
+        lastname:'Joness',
+        age:'28',
         parents:{
             father:'Mario',
             mother:'Martha'
