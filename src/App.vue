@@ -7,6 +7,8 @@
                 :userLastname="data.lastname"
                 :userAge="data.age"
                 :userParents="data.parents"
+                @update-lastname="data.lastname = $event"
+                @say-hello="alertHello"
             />
             <button @click="updateName">Update name</button>
         </div>
@@ -28,6 +30,10 @@
 
     const updateName = () => {
         data.name = "Golden child"
+    }
+
+    const alertHello = () => {
+        alert('Hello !!')
     }
 
 </script>

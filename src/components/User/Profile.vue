@@ -13,16 +13,25 @@
                 <span>{{ key }}: </span> {{ value }}
             </li>
         </ul>
+        <hr/>
+        <button @click="emit('update-lastname','Michaelson')">Change from child</button>
+        <button @click="sayHello">Say hello</button>
     </div>
 </template>
 
 <script setup>
+    const emit = defineEmits(['update-lastname','say-hello']);
     const props = defineProps({
         alsoKnownAs:String,
         userLastname:String,
         userAge:Number,
         userParents:Object
     });
+
+    const sayHello = () => {
+        emit('say-hello')
+    }
+
     const name = 'Steve'
 </script>
 
