@@ -2,17 +2,21 @@
     <div>
         <app-header/>
         <div class="container">
-            <Life v-if="showIt"/>
-            <hr/>
-            <button @click="showIt= !showIt">Toggle</button>
+            <button @click="activeComp = Mike">Mike</button>
+            <button @click="activeComp = Steve">Steve</button>
+            <!-- <Mike v-if="activeComp === Mike"/>
+            <Steve v-if="activeComp === Steve"/> -->
+            <component :is="activeComp"></component>
         </div>
     </div>
 </template>
 
 <script setup>
-    import { ref } from 'vue';
-    import Life from '@/components/Life/index.vue'
-    const showIt = ref(true);
+    import Mike from './components/Players/mike.vue';
+    import Steve from './components/Players/steve.vue';
+    import { shallowRef } from 'vue';
+
+    const activeComp = shallowRef(Mike);
 
 </script>
 
