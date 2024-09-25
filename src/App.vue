@@ -10,6 +10,7 @@
                 <component :is="activeComp"></component>
             </keep-alive>
         </div>
+        <div id="dialog_here"></div>
     </div>
 </template>
 
